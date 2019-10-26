@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 class bookrecord_table(db.Model):
     book_id = db.Column(db.Integer, primary_key=True)
     book_title = db.Column(db.String(255))
-    author = db.Column(db.Integer, db.ForeignKey('author_table.author_id'))
+    book_author = db.Column(db.Integer, db.ForeignKey('author_table.author_id'))
     book_publisher = db.Column(db.Integer, db.ForeignKey('publisher_table.publisher_id'))
     publish_date = db.Column(db.Date)
     start_date = db.Column(db.Date)
@@ -13,6 +13,12 @@ class bookrecord_table(db.Model):
     last_page = db.Column(db.Integer)
     book_description = db.Column(db.Text)
     current_page = db.Column(db.Integer)
+    interest_level = db.Column(db.Integer)
+
+    #Relationships. These are basically how python does joins.
+    get_author = db.relationship('author_table', backref='written_books', lazy=True)
+    get_publisher = db.relationship('publisher_table', backref='published_books', lazy=True)
+    get_genre = db.relationship('genrebook_junctiontable', backref='get_book_name', lazy=True)
 
     def __repr__(self):
         return '<Bookrecord_Model {}>'.format(self.book_title)
@@ -31,3 +37,21 @@ class publisher_table(db.Model):
 
     def __repr__(self):
         return '<Publisher Id: {} \n Publisher name: {}'.format(self.publisher_id, self.publisher_name)
+
+class genre_table(db.Model):
+    genre_id = db.Column(db.Integer, primary_key=True)
+    genre_name = db.Column(db.String(255))
+
+    books_in_genre = db.relationship('genrebook_junctiontable', backref='get_genre_name', lazy=True)
+
+    def __repr__(self):
+        return '<Genre Id: {} \n Genre name: {}'.format(self.genre_id, self.genre_name)
+
+class genrebook_junctiontable(db.Model):
+    junctionid = db.Column(db.Integer, primary_key=True)
+    genre_junctionid = db.Column(db.Integer, db.ForeignKey('genre_table.genre_id'))
+    book_junctionid = db.Column(db.String(255), db.ForeignKey('bookrecord_table.book_id'), nullable=False)
+
+
+    def __repr__(self):
+        return '<Genre JunctionId: {} \n Book JunctionId: {}'.format(self.genre_junctionid, self.book_junctionid)
