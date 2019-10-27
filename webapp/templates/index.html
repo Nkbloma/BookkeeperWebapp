@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            BookKeeepingWebapp
+        </title>
+    </head>
+    <body>
+            <h1>{{title}}</h1>
+            <h2> Book List </h2>
+            {%for book in books%}
+                <a href = "{{ url_for('bookrecord', currentTitle=book.book_title)}}">
+                    <p>{{book.book_title}}</p>
+                </a>
+            {% endfor %}  
+
+    </body>
+</html>

@@ -9,8 +9,8 @@ class bookrecord_table(db.Model):
     publish_date = db.Column(db.Date)
     start_date = db.Column(db.Date)
     is_finished = db.Column(db.Integer)
-    start_page = db.Column(db.Integer)
-    last_page = db.Column(db.Integer)
+    finished_date = db.Column(db.Date)
+    number_of_pages = db.Column(db.Integer)
     book_description = db.Column(db.Text)
     current_page = db.Column(db.Integer)
     interest_level = db.Column(db.Integer)
@@ -48,9 +48,9 @@ class genre_table(db.Model):
         return '<Genre Id: {} \n Genre name: {}'.format(self.genre_id, self.genre_name)
 
 class genrebook_junctiontable(db.Model):
-    junctionid = db.Column(db.Integer, primary_key=True)
+    junction_id = db.Column(db.Integer, primary_key=True)
     genre_junctionid = db.Column(db.Integer, db.ForeignKey('genre_table.genre_id'))
-    book_junctionid = db.Column(db.String(255), db.ForeignKey('bookrecord_table.book_id'), nullable=False)
+    book_junctionid = db.Column(db.Integer, db.ForeignKey('bookrecord_table.book_id'))
 
 
     def __repr__(self):
