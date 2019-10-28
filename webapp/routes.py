@@ -1,7 +1,7 @@
 from webapp import app
 from flask import Flask, redirect, render_template
 from webapp import db
-from webapp.models import bookrecord_table, author_table, genre_table, publisher_table, genrebook_junctiontable
+from webapp.models import bookrecord_table, author_table, genre_table, publisher_table #genrebook_junctiontable
 
 @app.route('/')
 @app.route('/records')
@@ -10,14 +10,28 @@ def records():
     
     return render_template("index.html", title="records", books = Book)
 
-@app.route('/bookrecord/<currentTitle>')
-def bookrecord(currentTitle):
-    CurrentBookRecords = bookrecord_table.query.filter_by(book_title = currentTitle).first()
-    currentBookAuthor = author_table.query.filter_by(author_id=CurrentBookRecords.book_author).first()
+@app.route('/bookrecord/<thisBooksTitle>')
+def bookrecord(thisBooksTitle):
+    thisBooksRecords = bookrecord_table.query.filter_by(book_title = thisBooksTitle).first()
+
+    thisBooksAuthor = thisBooksRecords.get_author
+    thisBooksPublisher = thisBooksRecords.get_publisher.publisher_name
+    thisBooksGenres = thisBooksRecords.get_genre
+   # thisBooksPublisher = publisher_table.query.filter_by()
+   # thisBooksInterestLevel
+   # thisBooksStartDate
+   # thisBooksCurrentPage
+   # thisBooksPageLength
+   # thisBooksIsFinished
+   # thisBooksFinishDate
+   # thisBooksDescription
+
 
     return render_template("bookrecord.html", 
-    thisTitle=currentTitle,
-    thisAuthor = currentBookAuthor.author_firstname + ' ' + currentBookAuthor.author_lastname
+    Title = thisBooksTitle,
+    Author = thisBooksAuthor.author_firstname + ' ' + thisBooksAuthor.author_lastname,
+    Publisher = thisBooksPublisher,
+    Genres = thisBooksGenres
     )
 
 @app.route('/createbook')

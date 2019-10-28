@@ -5,8 +5,23 @@
         </title>
     </head>
     <body>
-            <h1>Title: {{thisTitle}}</h1>
-            <h2> Author: {{thisAuthor}} </h2>  
+            <h1>Title: {{Title}}</h1>
+            <h2> Author: {{Author}} </h2> 
+            <h2> Publisher: {{Publisher}}</h2> 
+            <h2> Genres: 
+                {%for genre in Genres%}
+                    {{genre.genre_name}},
+                {%endfor%}
+            </h2>
+          <!-- <h2> Publisher: {{Publisher}}</h2>Intlevel
+            <h2> Publisher: {{Publisher}}</h2>
+            <h2> Publisher: {{Publisher}}</h2>date
+            <h2> Publisher: {{Publisher}}</h2>start date
+            <h2> Publisher: {{Publisher}}</h2>current
+            <h2> Publisher: {{Publisher}}</h2>number of pa
+            <h2> Publisher: {{Publisher}}</h2>isf
+            <h2> Publisher: {{Publisher}}</h2>finsdate
+            <h2> Publisher: {{Publisher}}</h2>desc -->
 
     </body>
 </html>

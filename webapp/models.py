@@ -1,6 +1,7 @@
 from webapp import db
 from flask_sqlalchemy import SQLAlchemy
 
+
 class bookrecord_table(db.Model):
     book_id = db.Column(db.Integer, primary_key=True)
     book_title = db.Column(db.String(255))
@@ -18,7 +19,7 @@ class bookrecord_table(db.Model):
     #Relationships. These are basically how python does joins.
     get_author = db.relationship('author_table', backref='written_books', lazy=True)
     get_publisher = db.relationship('publisher_table', backref='published_books', lazy=True)
-    get_genre = db.relationship('genrebook_junctiontable', backref='get_book_name', lazy=True)
+    get_genre = db.relationship('genre_table', secondary = 'genrebook_junctiontable')
 
     def __repr__(self):
         return '<Bookrecord_Model {}>'.format(self.book_title)
@@ -42,16 +43,10 @@ class genre_table(db.Model):
     genre_id = db.Column(db.Integer, primary_key=True)
     genre_name = db.Column(db.String(255))
 
-    books_in_genre = db.relationship('genrebook_junctiontable', backref='get_genre_name', lazy=True)
-
     def __repr__(self):
         return '<Genre Id: {} \n Genre name: {}'.format(self.genre_id, self.genre_name)
 
-class genrebook_junctiontable(db.Model):
-    junction_id = db.Column(db.Integer, primary_key=True)
-    genre_junctionid = db.Column(db.Integer, db.ForeignKey('genre_table.genre_id'))
-    book_junctionid = db.Column(db.Integer, db.ForeignKey('bookrecord_table.book_id'))
-
-
-    def __repr__(self):
-        return '<Genre JunctionId: {} \n Book JunctionId: {}'.format(self.genre_junctionid, self.book_junctionid)
+genrebook_junctiontable = db.Table('genrebook_junctiontable', db.metadata,
+    db.Column('genre_junctionid', db.Integer, db.ForeignKey('genre_table.genre_id')),
+    db.Column('book_junctionid', db.Integer, db.ForeignKey('bookrecord_table.book_id'))
+)
