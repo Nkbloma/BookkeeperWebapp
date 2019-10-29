@@ -1,0 +1,72 @@
+[Mon Oct 28 20:07:31.454388 2019] [wsgi:error] [pid 9328:tid 880] [client ::1:65289] mod_wsgi (pid=9328, process='', application='localhost:5000|'): Failed to parse Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/wsgi.py'.
+[Mon Oct 28 20:07:31.455388 2019] [wsgi:error] [pid 9328:tid 880] [client ::1:65289] mod_wsgi (pid=9328): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/wsgi.py'.
+[Mon Oct 28 20:07:31.455388 2019] [wsgi:error] [pid 9328:tid 880] [client ::1:65289]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/wsgi.py", line 3\r
+[Mon Oct 28 20:07:31.455388 2019] [wsgi:error] [pid 9328:tid 880] [client ::1:65289]     if __name__= "__main__"\r
+[Mon Oct 28 20:07:31.455388 2019] [wsgi:error] [pid 9328:tid 880] [client ::1:65289]                ^\r
+[Mon Oct 28 20:07:31.455388 2019] [wsgi:error] [pid 9328:tid 880] [client ::1:65289] SyntaxError: invalid syntax\r
+[Mon Oct 28 20:22:09.843629 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50027] mod_wsgi (pid=12048): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:22:09.843629 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50027] mod_wsgi (pid=12048): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:22:09.843629 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50027]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:22:09.843629 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50027]     sys.path.insert(0, 'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp')\r
+[Mon Oct 28 20:22:09.844629 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50027]                       ^\r
+[Mon Oct 28 20:22:09.844629 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50027] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:22:34.306028 2019] [wsgi:error] [pid 12048:tid 876] [client ::1:50045] mod_wsgi (pid=12048): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:22:34.307028 2019] [wsgi:error] [pid 12048:tid 876] [client ::1:50045] mod_wsgi (pid=12048): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:22:34.307028 2019] [wsgi:error] [pid 12048:tid 876] [client ::1:50045]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:22:34.308028 2019] [wsgi:error] [pid 12048:tid 876] [client ::1:50045]     sys.path.insert(0, 'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp')\r
+[Mon Oct 28 20:22:34.308028 2019] [wsgi:error] [pid 12048:tid 876] [client ::1:50045]                       ^\r
+[Mon Oct 28 20:22:34.308028 2019] [wsgi:error] [pid 12048:tid 876] [client ::1:50045] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:24:41.245289 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50157] mod_wsgi (pid=12048): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:24:41.245289 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50157] mod_wsgi (pid=12048): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:24:41.245289 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50157]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:24:41.245289 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50157]     sys.path.insert(0,'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp')\r
+[Mon Oct 28 20:24:41.245289 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50157]                      ^\r
+[Mon Oct 28 20:24:41.245289 2019] [wsgi:error] [pid 12048:tid 884] [client ::1:50157] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:25:30.460103 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50187] mod_wsgi (pid=9344): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:25:30.460103 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50187] mod_wsgi (pid=9344): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:25:30.460103 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50187]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:25:30.460103 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50187]     sys.path.insert(0,'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp')\r
+[Mon Oct 28 20:25:30.460103 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50187]                      ^\r
+[Mon Oct 28 20:25:30.460103 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50187] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:25:32.285208 2019] [wsgi:error] [pid 9344:tid 880] [client ::1:50188] mod_wsgi (pid=9344): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:25:32.286208 2019] [wsgi:error] [pid 9344:tid 880] [client ::1:50188] mod_wsgi (pid=9344): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:25:32.286208 2019] [wsgi:error] [pid 9344:tid 880] [client ::1:50188]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:25:32.286208 2019] [wsgi:error] [pid 9344:tid 880] [client ::1:50188]     sys.path.insert(0,'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp')\r
+[Mon Oct 28 20:25:32.286208 2019] [wsgi:error] [pid 9344:tid 880] [client ::1:50188]                      ^\r
+[Mon Oct 28 20:25:32.286208 2019] [wsgi:error] [pid 9344:tid 880] [client ::1:50188] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:25:57.368643 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50202] mod_wsgi (pid=9344): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:25:57.369643 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50202] mod_wsgi (pid=9344): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:25:57.370643 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50202] Traceback (most recent call last):\r
+[Mon Oct 28 20:25:57.370643 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50202]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3, in <module>\r
+[Mon Oct 28 20:25:57.370643 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50202]     from webapp import app as application\r
+[Mon Oct 28 20:25:57.370643 2019] [wsgi:error] [pid 9344:tid 884] [client ::1:50202] ModuleNotFoundError: No module named 'webapp'\r
+[Mon Oct 28 20:27:05.109517 2019] [wsgi:error] [pid 11768:tid 880] [client ::1:50249] mod_wsgi (pid=11768): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:27:05.109517 2019] [wsgi:error] [pid 11768:tid 880] [client ::1:50249] mod_wsgi (pid=11768): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:27:05.109517 2019] [wsgi:error] [pid 11768:tid 880] [client ::1:50249] Traceback (most recent call last):\r
+[Mon Oct 28 20:27:05.109517 2019] [wsgi:error] [pid 11768:tid 880] [client ::1:50249]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3, in <module>\r
+[Mon Oct 28 20:27:05.109517 2019] [wsgi:error] [pid 11768:tid 880] [client ::1:50249]     from webapp import app as application\r
+[Mon Oct 28 20:27:05.109517 2019] [wsgi:error] [pid 11768:tid 880] [client ::1:50249] ModuleNotFoundError: No module named 'webapp'\r
+[Mon Oct 28 20:32:27.854977 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50473] mod_wsgi (pid=12732): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:32:27.854977 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50473] mod_wsgi (pid=12732): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:32:27.854977 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50473]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:32:27.854977 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50473]     sys.path.insert(0,'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp\\webapp')\r
+[Mon Oct 28 20:32:27.854977 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50473]                      ^\r
+[Mon Oct 28 20:32:27.854977 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50473] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:32:29.097048 2019] [wsgi:error] [pid 12732:tid 876] [client ::1:50474] mod_wsgi (pid=12732): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:32:29.097048 2019] [wsgi:error] [pid 12732:tid 876] [client ::1:50474] mod_wsgi (pid=12732): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:32:29.097048 2019] [wsgi:error] [pid 12732:tid 876] [client ::1:50474]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:32:29.097048 2019] [wsgi:error] [pid 12732:tid 876] [client ::1:50474]     sys.path.insert(0,'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp\\webapp')\r
+[Mon Oct 28 20:32:29.097048 2019] [wsgi:error] [pid 12732:tid 876] [client ::1:50474]                      ^\r
+[Mon Oct 28 20:32:29.098048 2019] [wsgi:error] [pid 12732:tid 876] [client ::1:50474] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:32:30.447125 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50475] mod_wsgi (pid=12732): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:32:30.447125 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50475] mod_wsgi (pid=12732): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:32:30.447125 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50475]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 3\r
+[Mon Oct 28 20:32:30.447125 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50475]     sys.path.insert(0,'C:\\Users\\Nickoslick\\Documents\\Python Stuff\\FlaskProjects\\BookkeepingApp\\webapp')\r
+[Mon Oct 28 20:32:30.447125 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50475]                      ^\r
+[Mon Oct 28 20:32:30.448125 2019] [wsgi:error] [pid 12732:tid 884] [client ::1:50475] SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \\UXXXXXXXX escape\r
+[Mon Oct 28 20:38:11.907656 2019] [wsgi:error] [pid 9460:tid 884] [client ::1:50683] mod_wsgi (pid=9460): Failed to exec Python script file 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:38:11.907656 2019] [wsgi:error] [pid 9460:tid 884] [client ::1:50683] mod_wsgi (pid=9460): Exception occurred processing WSGI script 'C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi'.
+[Mon Oct 28 20:38:11.908656 2019] [wsgi:error] [pid 9460:tid 884] [client ::1:50683] Traceback (most recent call last):\r
+[Mon Oct 28 20:38:11.908656 2019] [wsgi:error] [pid 9460:tid 884] [client ::1:50683]   File "C:/Users/Nickoslick/Documents/Python Stuff/FlaskProjects/BookkeepingApp/web.wsgi", line 5, in <module>\r
+[Mon Oct 28 20:38:11.908656 2019] [wsgi:error] [pid 9460:tid 884] [client ::1:50683]     from webapp import app as application\r
+[Mon Oct 28 20:38:11.908656 2019] [wsgi:error] [pid 9460:tid 884] [client ::1:50683] ModuleNotFoundError: No module named 'webapp'\r
