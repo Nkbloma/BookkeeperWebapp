@@ -7,21 +7,43 @@
     <body>
             <h1>Title: {{Title}}</h1>
             <h2> Author: {{Author}} </h2> 
-            <h2> Publisher: {{Publisher}}</h2> 
+            <h2> Publisher: {{Publisher}}</h2>
+            <h2> Publish Date: {{PublishDate}}</h2> 
             <h2> Genres: 
                 {%for genre in Genres%}
                     {{genre.genre_name}},
                 {%endfor%}
             </h2>
-          <!-- <h2> Publisher: {{Publisher}}</h2>Intlevel
-            <h2> Publisher: {{Publisher}}</h2>
-            <h2> Publisher: {{Publisher}}</h2>date
-            <h2> Publisher: {{Publisher}}</h2>start date
-            <h2> Publisher: {{Publisher}}</h2>current
-            <h2> Publisher: {{Publisher}}</h2>number of pa
-            <h2> Publisher: {{Publisher}}</h2>isf
-            <h2> Publisher: {{Publisher}}</h2>finsdate
-            <h2> Publisher: {{Publisher}}</h2>desc -->
-
+            <h2> Interest Level: {{InterestLevel}}</h2>
+            <h2> Start Date:
+                {% if StartDate is not none %}
+                    {{StartDate}}
+                {% else %}
+                    X
+                {% endif %}
+            </h2>
+            <h2> CurrentPage:
+                {% if CurrentPage is not none %}
+                    {{CurrentPage}}
+                {% else %}
+                    X
+                {% endif %}
+            </h2>
+            <h2> Page Length: {{PageLength}}</h2>
+            <h2> Is Finished: 
+                {% if isFinished == 1 %}
+                    Checkmark
+                {% else %}
+                    X
+                {% endif %}
+            </h2>
+            <h2> Finish Date: 
+                {% if FinishDate is not none %}
+                    {{FinishDate}}
+                {% else %}
+                    X
+                {% endif %}
+            </h2>
+            <h2> Description: {{Description}}</h2>
     </body>
 </html>

@@ -16,22 +16,30 @@ def bookrecord(thisBooksTitle):
 
     thisBooksAuthor = thisBooksRecords.get_author
     thisBooksPublisher = thisBooksRecords.get_publisher.publisher_name
+    thisBooksPublishDate = thisBooksRecords.publish_date
     thisBooksGenres = thisBooksRecords.get_genre
-   # thisBooksPublisher = publisher_table.query.filter_by()
-   # thisBooksInterestLevel
-   # thisBooksStartDate
-   # thisBooksCurrentPage
-   # thisBooksPageLength
-   # thisBooksIsFinished
-   # thisBooksFinishDate
-   # thisBooksDescription
+    thisBooksInterestLevel = thisBooksRecords.interest_level
+    thisBooksStartDate = thisBooksRecords.start_date
+    thisBooksCurrentPage = thisBooksRecords.current_page
+    thisBooksPageLength = thisBooksRecords.number_of_pages
+    thisBooksIsFinished = thisBooksRecords.is_finished
+    thisBooksFinishDate = thisBooksRecords.finished_date
+    thisBooksDescription = thisBooksRecords.book_description
 
 
     return render_template("bookrecord.html", 
     Title = thisBooksTitle,
     Author = thisBooksAuthor.author_firstname + ' ' + thisBooksAuthor.author_lastname,
     Publisher = thisBooksPublisher,
-    Genres = thisBooksGenres
+    PublishDate = thisBooksPublishDate,
+    Genres = thisBooksGenres,
+    InterestLevel = thisBooksInterestLevel,
+    StartDate = thisBooksStartDate,
+    CurrentPage = thisBooksCurrentPage,
+    PageLength = thisBooksPageLength,
+    IsFinished = thisBooksIsFinished,
+    FinishDate = thisBooksFinishDate,
+    Description = thisBooksDescription
     )
 
 @app.route('/createbook')

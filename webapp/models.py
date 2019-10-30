@@ -21,9 +21,6 @@ class bookrecord_table(db.Model):
     get_publisher = db.relationship('publisher_table', backref='published_books', lazy=True)
     get_genre = db.relationship('genre_table', secondary = 'genrebook_junctiontable')
 
-    def __repr__(self):
-        return '<Bookrecord_Model {}>'.format(self.book_title)
-
 class author_table(db.Model):
     author_id = db.Column(db.Integer, primary_key=True)
     author_firstname = db.Column(db.String(255))
