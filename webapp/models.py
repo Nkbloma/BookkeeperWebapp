@@ -15,6 +15,7 @@ class bookrecord_table(db.Model):
     book_description = db.Column(db.Text)
     current_page = db.Column(db.Integer)
     interest_level = db.Column(db.Integer)
+    last_read_date = db.Column(db.Date)
 
     #Relationships. These are basically how python does joins.
     get_author = db.relationship('author_table', backref='written_books', lazy=True)
@@ -41,7 +42,7 @@ class genre_table(db.Model):
     genre_name = db.Column(db.String(255))
 
     def __repr__(self):
-        return '<Genre Id: {} \n Genre name: {}'.format(self.genre_id, self.genre_name)
+        return '<Genre Id: {} Genre name: {}\n'.format(self.genre_id, self.genre_name)
 
 genrebook_junctiontable = db.Table('genrebook_junctiontable', db.metadata,
     db.Column('genre_junctionid', db.Integer, db.ForeignKey('genre_table.genre_id')),

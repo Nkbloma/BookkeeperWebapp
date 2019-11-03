@@ -11,7 +11,17 @@
                 <a href = "{{ url_for('bookrecord', thisBooksTitle=book.book_title)}}">
                     <p>{{book.book_title}}</p>
                 </a>
-            {% endfor %}  
+            {% endfor %}
 
+            {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %} {%endblock%}
     </body>
 </html>
