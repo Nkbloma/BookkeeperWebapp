@@ -3,6 +3,7 @@ from flask import Flask, redirect, flash, render_template, url_for
 from webapp import db
 from webapp.models import bookrecord_table, author_table, genre_table, publisher_table #genrebook_junctiontable
 from webapp.forms import CreateBookForm
+from webapp.InsertBook import InsertBook
 
 @app.route('/')
 @app.route('/records')
@@ -47,30 +48,12 @@ def bookrecord(thisBooksTitle):
 def createbook():
     createForm = CreateBookForm()
     if createForm.validate_on_submit():
-        InsertForm(createForm)
+        formInstance=InsertBook(createForm)
+        formInstance.InsertToTable()
         return redirect('/records')
 
     return render_template("createbook.html", title="createbook", form=createForm)
 
 @app.route('/info')
-def home():
+def info():
     return render_template("index.html", title="info")
-
-
-def InsertForm(InsertForm):
-    newbook=bookrecord_table(
-        book_title=InsertForm.bookTitle_field.data,
-        book_author=1,
-        book_publisher=2,
-        publish_date=InsertForm.publishedDate_field.data,
-        start_date=InsertForm.startDate_field.data,
-        is_finished=0,
-        finished_date=None,
-        number_of_pages=125,
-        book_description="Tis a new book",
-        current_page=0,
-        interest_level=2
-    )
-    db.session.add(newbook)
-    db.session.commit()
-    flash("Book title {} author name {}".format(InsertForm.bookTitle_field.data, InsertForm.authorName_field.data))

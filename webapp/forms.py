@@ -14,7 +14,8 @@ class CreateBookForm(FlaskForm):
         genreChoices.append((str(x.genre_id), x.genre_name))
 
     bookTitle_field = StringField('Book Title')
-    authorName_field = StringField('Author Name')
+    authorFirstName_field = StringField('Author First Name')
+    authorLastName_field = StringField('Author Last Name')
     publisherName_field = StringField('Publisher Name')
     publishedDate_field = DateField('Published Date')
     genreType_field = MultiCheckboxField('Genre Type', choices=genreChoices)
