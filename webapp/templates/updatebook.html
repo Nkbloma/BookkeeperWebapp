@@ -1,0 +1,60 @@
+            {% extends "index.html" %}
+            {% block content%}
+            {% if form.errors %}
+            <ul class="errors">
+                {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                    {% for error in field_errors %}
+                        <li>{{ form[field_name].label }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+         {% endif %}
+           <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.bookTitle_field.label }}: </br> {{ form.bookTitle_field }}
+                </p>
+                <p>
+                    {{ form.authorFirstName_field.label }}: </br> {{ form.authorFirstName_field }}
+                </p>
+                <p>
+                    {{ form.authorLastName_field.label }}: </br> {{ form.authorLastName_field }}
+                </p>
+                <p>
+                    {{ form.publisherName_field.label }}: </br> {{ form.publisherName_field }}
+                </p>
+                <p>
+                    {{ form.publishedDate_field.label }}: </br> {{ form.publishedDate_field }}
+                </p>
+                <p>
+                    {{ form.genreType_field.label }}: </br> {{ form.genreType_field }}
+                </p>
+                <p>
+                    {{ form.startDate_field.label }}: </br> {{ form.startDate_field }}
+                </p>
+                <p>
+                    {{ form.currentPage_field.label }}: </br> {{ form.currentPage_field }}
+                </p>
+                <p>
+                    {{ form.lastRead_field.label }}: </br> {{ form.lastRead_field }}
+                </p>
+                <p>
+                    {{ form.isFinished_field.label }}: </br> {{ form.isFinished_field }}
+                </p>
+                <p>
+                    {{ form.finishedDate_field.label }}: </br> {{ form.finishedDate_field }}
+                </p>
+                <p>
+                    {{ form.pageNumber_field.label }}: </br> {{ form.pageNumber_field }}
+                </p>
+                <p>
+                    {{ form.bookDescription_field.label }}: </br> {{ form.bookDescription_field }}
+                </p>
+                <p>
+                    {{ form.interestLevel_field.label }}: </br> {{ form.interestLevel_field }}
+                </p>
+                <p>
+                    {{ form.submit_field() }}
+                </p>
+           </form>
+           {%endblock%}

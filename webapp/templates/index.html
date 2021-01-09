@@ -8,9 +8,14 @@
             <h1>{{title}}</h1>
             <h2> Book List </h2>
             {%for book in books%}
-                <a href = "{{ url_for('bookrecord', thisBooksTitle=book.book_title)}}">
-                    <p>{{book.book_title}}</p>
+                <a href = "{{ url_for('bookrecord', thisBooksTitle=book.book_title)}}"> 
+                        <p>{{book.book_title}}</p>
                 </a>
+                <input type="hidden" value="{{book.book_title}}" name="thisTitle">
+                <a href = "{{ url_for('update', updatedBooksTitle=book.book_title)}}"> <span>Update</span></a>
+                <a href = "{{ url_for('delete', updatedBooksTitle=book.book_title)}}"><span> Delete </span></a>
+                </br>
+                </br>
             {% endfor %}
 
             {% with messages = get_flashed_messages() %}

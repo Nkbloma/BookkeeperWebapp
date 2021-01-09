@@ -1,6 +1,6 @@
 from webapp import db
-from webapp.models import bookrecord_table, author_table, genre_table, publisher_table
-from webapp.forms import CreateBookForm
+from webapp.models import bookrecord_table, author_table, genre_table, publisher_table, genrebook_junctiontable
+from webapp.forms import BookForm
 from flask import Flask, redirect, flash
 
 class InsertBook:
@@ -8,12 +8,10 @@ class InsertBook:
     def __init__(self, EnteredForm):
         self.formData = EnteredForm
 
-    def CheckAuthor(self):
+    def CheckAuthorExists(self):
         Firstname = self.formData.authorFirstName_field.data
         Lastname = self.formData.authorLastName_field.data
-        #Get Author for name
         author_query=author_table.query.filter_by(author_firstname=Firstname, author_lastname=Lastname).first()
-        #Search Query for Author First Name and Author Last Name
         if author_query is None:
             newAuthor=author_table(author_firstname=Firstname, author_lastname=Lastname)
             db.session.add(newAuthor)
@@ -25,7 +23,7 @@ class InsertBook:
         #   search new author, return newauthor.id
         #Else return search.id
 
-    def CheckPublisher(self):
+    def CheckPublisherExists(self):
         PublisherName=self.formData.publisherName_field.data
 
         #Get Author for name
@@ -52,38 +50,56 @@ class InsertBook:
             return 1
         #If formFinished = false return 0
         #Else return 1.
+    
+    def GetGenreIDs(self, newBookInstance):
+        arrayofIds = []
+        formGenres = self.formData.genreType_field.data
+        for genre in formGenres:
+            arrayofIds.append(int(genre))
+        
+        newBookRecord = bookrecord_table.query.filter_by(book_title=self.formData.bookTitle_field.data,
+            book_author=self.CheckAuthorExists(),
+            book_publisher=self.CheckPublisherExists(),
+            publish_date=self.formData.publishedDate_field.data,
+            start_date=self.formData.startDate_field.data,
+            last_read_date=self.formData.lastRead_field.data,
+            is_finished=self.CheckisFinished(),
+            finished_date=self.formData.finishedDate_field.data,
+            number_of_pages=self.formData.pageNumber_field.data,
+            book_description=self.formData.bookDescription_field.data,
+            current_page=self.formData.currentPage_field.data,
+            interest_level=self.formData.interestLevel_field.data
+        ).first()
+        for id in arrayofIds:
+            db.session.execute(genrebook_junctiontable.insert().values(genre_junctionid=id, book_junctionid=newBookRecord.book_id))
+       
+        db.session.commit()
 
-    #def GetGenreIDs():
-        #for items in chosenFormGenres
-        #   bundleofIDS=get genre id where genre = name
-        #genreBookIds = array where (newbookID, each genre id)
-        #for entries in genreBookIds
-        # db.session(genrebook_junction) db.commit
-        #Man this is harder than I thought...
-        #And I still got an edit and delete logic to make.  
-        # I'm going to worry about this last, but it might be
-        # best if I were to just add the newbook first than it's genres after
-        # That way I know the ID for the newbook exists.
 
-
-    #By the way to get these things again you might need self. so make an __init__.
+    #By the way to get these things again you might need self. so make an __init__.'''
     def InsertToTable(self):
         newbook=bookrecord_table(
-        book_title=self.formData.bookTitle_field.data,
-        book_author=self.CheckAuthor(),
-        book_publisher=self.CheckPublisher(),
-        publish_date=self.formData.publishedDate_field.data,
-        start_date=self.formData.startDate_field.data,
-        is_finished=self.CheckisFinished(),
-        finished_date=self.formData.finishedDate_field.data,
-        number_of_pages=self.formData.pageNumber_field.data,
-        book_description=self.formData.bookDescription_field.data,
-        current_page=self.formData.currentPage_field.data,
-        interest_level=self.formData.interestLevel_field.data
+            book_title=self.formData.bookTitle_field.data,
+            book_author=self.CheckAuthorExists(),
+            book_publisher=self.CheckPublisherExists(),
+            publish_date=self.formData.publishedDate_field.data,
+            start_date=self.formData.startDate_field.data,
+            last_read_date=self.formData.lastRead_field.data,
+            is_finished=self.CheckisFinished(),
+            finished_date=self.formData.finishedDate_field.data,
+            number_of_pages=self.formData.pageNumber_field.data,
+            book_description=self.formData.bookDescription_field.data,
+            current_page=self.formData.currentPage_field.data,
+            interest_level=self.formData.interestLevel_field.data
         )
         db.session.add(newbook)
         db.session.commit()
-        flash("Book title {}".format(self.formData.bookTitle_field.data))
+
+        self.GetGenreIDs(newbook)
+        #The id needs to be created first
+        flash("Book title {} Genres{}".format(self.formData.bookTitle_field.data, self.formData.genreType_field.data))
+ 
+ 
     """
         Book Title:
             Enter Book title

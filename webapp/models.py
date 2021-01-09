@@ -20,7 +20,7 @@ class bookrecord_table(db.Model):
     #Relationships. These are basically how python does joins.
     get_author = db.relationship('author_table', backref='written_books', lazy=True)
     get_publisher = db.relationship('publisher_table', backref='published_books', lazy=True)
-    get_genre = db.relationship('genre_table', secondary = 'genrebook_junctiontable')
+    get_genre = db.relationship('genre_table', secondary = 'genrebook_junctiontable', backref="toBook")
 
 class author_table(db.Model):
     author_id = db.Column(db.Integer, primary_key=True)

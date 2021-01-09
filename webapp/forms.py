@@ -7,7 +7,7 @@ class MultiCheckboxField(SelectMultipleField):
     widget = widgets.ListWidget(prefix_label=False)
     option_widget = widgets.CheckboxInput()
 
-class CreateBookForm(FlaskForm):
+class BookForm(FlaskForm):
     genres= genre_table.query.all()
     genreChoices=[]
     for x in genres:
@@ -23,7 +23,7 @@ class CreateBookForm(FlaskForm):
     currentPage_field = IntegerField('Current Page')
     lastRead_field = DateField('Last Time Read')
     isFinished_field = BooleanField('Finished')
-    finishedDate_field = DateField('Finished Date')
+    finishedDate_field = DateField('Finished Date', validators=(validators.Optional(),))
     pageNumber_field = IntegerField('Number of Pages')
     bookDescription_field = TextAreaField('Description')
     interestLevel_field = RadioField('Interest Level', choices=[
